@@ -709,7 +709,8 @@ html.no-js .reveal { opacity: 1; transform: none; }
   transition: border-color 0.3s, background 0.3s;
 }
 .cart-ship-opt:hover { border-color: var(--line-2); }
-.cart-ship-opt:has(input:checked) { border-color: var(--accent); background: var(--accent-dim); }
+.cart-ship-opt:has(input:checked), .cart-ship-only { border-color: var(--accent); background: var(--accent-dim); }
+.cart-ship-only { cursor: default; }
 .cart-ship-opt input { accent-color: var(--accent); }
 .cart-ship-opt span { flex: 1; color: var(--ink-soft); }
 .cart-ship-opt strong { font-family: var(--mono); font-size: 0.85rem; }

@@ -11,10 +11,8 @@
   var CURRENCY = CFG.currency || "EUR";
   var SHIP_PICKUP = typeof CFG.shippingPickup === "number" ? CFG.shippingPickup
                   : (typeof CFG.shippingFlat === "number" ? CFG.shippingFlat : 3.95);
-  var SHIP_HOME = typeof CFG.shippingHome === "number" ? CFG.shippingHome : 4.95;
   var FREE_FROM = typeof CFG.freeShippingFrom === "number" ? CFG.freeShippingFrom : 49;
-  var shipMethod = "pickup";
-  try { shipMethod = localStorage.getItem("fundadron-ship") || "pickup"; } catch (e) {}
+  var shipMethod = "pickup"; /* único método de envío disponible */
 
   var $ = function (sel, scope) { return (scope || document).querySelector(sel); };
   var $$ = function (sel, scope) { return Array.prototype.slice.call((scope || document).querySelectorAll(sel)); };
@@ -235,7 +233,7 @@
   function cartShipping(subtotal) {
     if (subtotal <= 0) return 0;
     if (subtotal >= FREE_FROM) return 0;
-    return shipMethod === "home" ? SHIP_HOME : SHIP_PICKUP;
+    return SHIP_PICKUP;
   }
   function pickupPointText() {
     var inp = $("[data-pickup-point]");
@@ -247,7 +245,7 @@
     var zone = $("[data-pickup-zone]");
     if (zone) zone.style.display = shipMethod === "pickup" ? "" : "none";
     var label = $("[data-cart-shiplabel]");
-    if (label) label.textContent = shipMethod === "home" ? "Envío a domicilio" : "Envío a punto de recogida";
+    if (label) label.textContent = "Envío a punto de recogida";
   }
   function cartCount() {
     return cart.reduce(function (s, i) { return s + i.qty; }, 0);
@@ -442,12 +440,8 @@
           var shipping = cartShipping(subtotal);
           var total = subtotal + shipping;
           var desc = "Pedido FundaDron (" + cartCount() + " art.)";
-          if (shipMethod === "pickup") {
-            var pt = pickupPointText();
-            desc += " · Recogida InPost" + (pt ? ": " + pt : " (punto sin especificar)");
-          } else {
-            desc += " · Envío a domicilio";
-          }
+          var pt = pickupPointText();
+          desc += " · Recogida InPost" + (pt ? ": " + pt : " (punto sin especificar)");
           return actions.order.create({
             purchase_units: [{
               description: desc.slice(0, 127),
