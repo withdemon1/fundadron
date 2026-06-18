@@ -1,0 +1,8 @@
+# Archivos internos que NO deben publicarse en la web
+.git
+.gitignore
+.assetsignore
+.wrangler
+wrangler.jsonc
+README.md
+LEEME.txt
