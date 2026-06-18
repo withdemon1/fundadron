@@ -5,5 +5,10 @@
   // Sirve todos los archivos de la raíz del repo como sitio estático.
   "assets": {
     "directory": "./"
-  }
+  },
+  // Dominio propio: Cloudflare crea el DNS + HTTPS automáticamente al desplegar.
+  "routes": [
+    { "pattern": "fundadron.com", "custom_domain": true },
+    { "pattern": "www.fundadron.com", "custom_domain": true }
+  ]
 }
