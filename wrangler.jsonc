@@ -1,0 +1,9 @@
+{
+  // Configuración para desplegar FundaDron como web estática en Cloudflare.
+  "name": "fundadron",
+  "compatibility_date": "2026-06-01",
+  // Sirve todos los archivos de la raíz del repo como sitio estático.
+  "assets": {
+    "directory": "./"
+  }
+}
