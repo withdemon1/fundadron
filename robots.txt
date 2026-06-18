@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /legal.html
 
-Sitemap: https://www.fundadron.es/sitemap.xml
+Sitemap: https://www.fundadron.com/sitemap.xml
