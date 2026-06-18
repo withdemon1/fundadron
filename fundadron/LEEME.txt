@@ -1,0 +1,89 @@
+================================================================
+  FUNDADRON — Tu tienda online · Instrucciones rápidas
+================================================================
+
+QUÉ HAY EN ESTA CARPETA
+-----------------------
+index.html        → la tienda (ábrelo con doble clic para probarla)
+legal.html        → aviso legal, privacidad, cookies y devoluciones
+styles.css        → todos los estilos
+main.js           → carrito, PayPal, filtros y animaciones
+lib/manifest.js   → ⭐ TUS DATOS: precios, productos y configuración
+assets/           → logo (logo.svg), favicon
+.htaccess         → configuración de caché para Hostinger (¡no lo borres!)
+robots.txt / sitemap.xml → SEO para Google
+
+
+PASO 1 — PAGOS: ✓ YA ACTIVADO
+------------------------------
+Tu Client ID de PayPal ya está pegado en lib/manifest.js. El carrito
+muestra el botón de PayPal Y el botón negro "Tarjeta de débito o
+crédito" (el cliente paga como invitado, sin cuenta PayPal).
+IMPORTANTE: asegúrate de que el Client ID es el de la pestaña "Live"
+(no "Sandbox") en developer.paypal.com → Apps & Credentials.
+
+Comisión de PayPal España: 2,9% + 0,35 € por venta.
+En una venta de 21,95 € recibes ≈ 20,96 €.
+
+
+PASO 2 — CAMBIAR PRECIOS O PRODUCTOS
+------------------------------------
+Todo está en lib/manifest.js (precios, descripciones, envío).
+OJO: los precios también aparecen escritos en index.html (tarjetas
+de producto y datos SEO). Si cambias un precio, cámbialo en los dos
+sitios o pídemelo a mí y lo hago en segundos.
+
+Envío configurado: punto de recogida/locker InPost 3,95 € ·
+a domicilio 4,95 € · GRATIS a partir de 49 €
+(se cambia en lib/manifest.js → shippingPickup, shippingHome
+y freeShippingFrom)
+
+Si el cliente elige punto de recogida, puede pulsar "Elegir punto
+en el mapa": se abre el mapa oficial de Mondial Relay / InPost,
+elige su Punto Pack o locker y se guarda solo. Ese punto te llega
+junto al pago de PayPal (en la descripción del pedido). Compra la
+etiqueta en inpost.es o vía Packlink con ese punto como destino.
+
+NOTA del mapa: usa el código de comercio de PRUEBAS "BDTEST13"
+(los puntos que muestra son reales). Cuando te registres gratis
+como comercio en mondialrelay.com / inpost.es, pon tu código en
+lib/manifest.js → mondialRelayBrand.
+
+
+PASO 3 — RELLENAR LOS DATOS LEGALES
+------------------------------------
+Abre legal.html y sustituye los campos [ENTRE CORCHETES] con tu
+nombre, NIF y dirección. Es obligatorio por ley (LSSI) para vender
+online en España.
+
+
+PASO 4 — SUBIR LA WEB A INTERNET (Hostinger)
+--------------------------------------------
+1. Contrata un plan de hosting (el más barato sirve) y un dominio
+   (ej.: fundadron.es, ~10 €/año).
+2. En el panel de Hostinger → Administrador de archivos →
+   carpeta public_html → arrastra TODO el contenido de esta carpeta
+   (incluido el archivo oculto .htaccess).
+3. Ya está online.
+
+Si compras otro dominio distinto de fundadron.es, dímelo y actualizo
+las URLs de SEO (sitemap.xml, robots.txt y las metaetiquetas).
+
+
+PASO 5 — FOTOS
+---------------
+Las tarjetas ya llevan tus fotos reales (optimizadas en WebP, en
+assets/img/). Cada producto tiene 2 fotos: al pasar el ratón por
+encima se ve la segunda. Si quieres cambiar alguna, pásame la nueva
+foto y te la integro.
+
+
+SEO — PRIMEROS PASOS (gratis)
+------------------------------
+1. Google Search Console (search.google.com/search-console):
+   verifica tu dominio y envía el sitemap.xml.
+2. Google Merchant Center (merchants.google.com): date de alta y
+   crea las "fichas gratuitas" para salir en la pestaña Shopping
+   sin pagar.
+Todo el plan de marketing completo está en el documento
+"Guia-Negocio-FundaDron.md" de la carpeta principal.
